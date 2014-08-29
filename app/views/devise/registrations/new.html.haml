@@ -19,6 +19,9 @@
   .form-group
     = f.label :username
     = f.text_field :username, class: 'form-control'
+  .form-group
+    = f.label :language_id       
+    = f.collection_select(:language_id, Language.all, :id, :name, {prompt: 'Choose your native language'})
   
   %button.btn.btn-default{type: "submit"} Sign up
 = render "devise/shared/links"
