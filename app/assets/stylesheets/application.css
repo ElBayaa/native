@@ -5,4 +5,5 @@
  *= require_self
  *= require bootstrap_and_overrides
  *= require dashboard_template
+ *= require devise_bootstrap_views
 */

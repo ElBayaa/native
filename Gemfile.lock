@@ -65,6 +65,7 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.3)
     erubis (2.7.0)
     execjs (2.2.1)
     formtastic (2.3.0)
@@ -195,6 +196,7 @@ DEPENDENCIES
   activeadmin!
   coffee-rails (~> 4.0.0)
   devise
+  devise-bootstrap-views
   haml-rails
   html2haml
   jbuilder (~> 2.0)

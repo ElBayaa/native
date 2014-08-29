@@ -29,9 +29,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'pg'
-gem 'devise'
 
+gem 'devise'
 gem 'twitter-bootstrap-rails'
+gem 'devise-bootstrap-views'
 
 gem 'activeadmin', github: 'activeadmin'
 
