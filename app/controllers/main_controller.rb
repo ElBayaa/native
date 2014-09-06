@@ -1,9 +1,8 @@
 class MainController < ApplicationController
   
   def home
-    respond_to do |format|
-      format.any{ render text: "Welcome #{current_user.name}"}
-    end
+    @languages = Language.all
+    @online_friends = current_user.friends.online
   end
   
 end

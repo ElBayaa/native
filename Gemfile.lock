@@ -15,6 +15,15 @@ GIT
       ransack (~> 1.0)
       sass-rails
 
+GIT
+  remote: https://github.com/netzpirat/haml_coffee_assets
+  revision: a3c2951eca005d4fcce4837b9a97a139fc022c66
+  specs:
+    haml_coffee_assets (1.16.0)
+      coffee-script (~> 2.0)
+      sprockets (~> 2.0)
+      tilt (~> 1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,6 +53,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    angularjs-rails (1.2.22)
     arbre (1.0.2)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
@@ -194,10 +204,13 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  angularjs-rails
   coffee-rails (~> 4.0.0)
   devise
   devise-bootstrap-views
+  execjs
   haml-rails
+  haml_coffee_assets!
   html2haml
   jbuilder (~> 2.0)
   jquery-rails

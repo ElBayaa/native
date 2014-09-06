@@ -1,10 +1,32 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
+  devise_for :users 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resources :languages, only: [:index, :show] do
+        member do
+          get :channels
+          get 'channels/:channel_id' => 'languages#channel', as: :language_channel
+        end
+      end
 
+      resources :channels, only: [:index, :show] do
+        member do
+          get :online_users
+        end
+      end
+      
+      resources :users, only: [] do
+        collection do
+          get :online_friends
+        end
+      end
+    end
+  end
   # You can have the root of your site routed with "root"
   root 'main#home'
 

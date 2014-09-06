@@ -13,3 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require angular
+//= require angular-resource
+//= require angular-route
+//= require main
+//= require_tree ../templates
+//= require_tree ./angular
+

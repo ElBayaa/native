@@ -10,8 +10,10 @@ gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
-gem "haml-rails"
 gem "html2haml"
+gem "haml-rails"
+gem 'haml_coffee_assets', git: "https://github.com/netzpirat/haml_coffee_assets"
+gem 'execjs'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -35,6 +37,8 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
 gem 'activeadmin', github: 'activeadmin'
+
+gem 'angularjs-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

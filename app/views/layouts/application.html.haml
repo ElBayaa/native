@@ -1,5 +1,5 @@
 !!!
-%html
+%html{'ng-app' => 'BeNative'}
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
@@ -37,15 +37,7 @@
     .container-fluid
       .row
         .col-sm-3.col-md-2.sidebar
-          %ul.nav.nav-sidebar
-            %li.active
-              %a{:href => "#"} Overview
-            %li
-              %a{:href => "#"} Reports
-            %li
-              %a{:href => "#"} Analytics
-            %li
-              %a{:href => "#"} Export
+          = yield :sidebar
           
         .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
           = yield
