@@ -25,4 +25,13 @@ App.controller 'ChannelsCtrl', ['$scope', '$http', 'Channels', ($scope, $http, $
     $channels.active_channels.push(channel) unless existing_channel.length
 
     $channels.selected_channel = channel
+
+  $scope.removeChannel = (index)->
+    channel = $channels.active_channels[index]
+    return if channel.id == -1 # can't remove Online Users Channel
+    $channels.active_channels.splice index, 1
+    # if the removed channel is the currently selected one then select the previous channel 
+    if channel.id == $channels.selected_channel.id
+      $scope.selectChannel($channels.active_channels[index - 1])
+
 ]

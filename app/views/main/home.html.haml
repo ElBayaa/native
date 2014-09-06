@@ -8,7 +8,9 @@
 
 %ul.nav.nav-tabs{'ng-controller' => 'ChannelsCtrl', 'ng-init' => "setOnlineFriends(#{@online_friends.to_json})"}
   %li{'ng-repeat' => 'channel in active_channels', 'ng-class' => '{active: selected_channel && selected_channel.id == channel.id}'}
-    %a{'data-toggle' => 'tab', 'ng-click' => 'selectChannel(channel)'} {{channel.name}}
+    %a{'data-toggle' => 'tab', 'ng-click' => 'selectChannel(channel)'}
+      {{channel.name}}
+      %span.glyphicon.glyphicon-remove-circle{'ng-if' => 'channel.id != -1', 'ng-click' => 'removeChannel($index)'}
 
 %ul.thumbnails{ 'ng-controller' => 'ChannelsCtrl' }
   %li.span2{ 'ng-repeat' => "user in selected_channel.users"}
