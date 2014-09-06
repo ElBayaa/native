@@ -1,4 +1,4 @@
-window.App = angular.module("BeNative",['ngRoute','ngResource'])
+window.App = angular.module("BeNative",['ngCookies','ngResource'])
 
 App.version = 'v1'
 

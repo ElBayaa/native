@@ -6,9 +6,13 @@ App.factory 'Channels', ['$http', ($http) ->
   
   setOnlineFriends = (friends)->
     online_friends_channel.users = friends
+  
+  resetActiveChannels = (channels)->
+    active_channels = [online_friends_channel]
 
   shared = 
     active_channels: active_channels
     selected_channel: selected_channel
     setOnlineFriends: setOnlineFriends
+    resetActiveChannels: resetActiveChannels
 ]

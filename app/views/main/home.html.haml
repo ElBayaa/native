@@ -6,7 +6,7 @@
         %li{'ng-repeat' => "channel in language.channels", 'ng-class' => '{active: selected_channel && selected_channel.id == channel.id}'}
           %a{'ng-click' => 'selectChannel(channel)'} {{channel.name}}
 
-%ul.nav.nav-tabs{'ng-controller' => 'ChannelsCtrl', 'ng-init' => "setOnlineFriends(#{@online_friends.to_json})"}
+%ul.nav.nav-tabs{'ng-controller' => 'ChannelsCtrl', 'ng-init' => "setOnlineFriends(#{@online_friends.to_json}); fetchLastActiveChannels()"}
   %li{'ng-repeat' => 'channel in active_channels', 'ng-class' => '{active: selected_channel && selected_channel.id == channel.id}'}
     %a{'data-toggle' => 'tab', 'ng-click' => 'selectChannel(channel)'}
       {{channel.name}}

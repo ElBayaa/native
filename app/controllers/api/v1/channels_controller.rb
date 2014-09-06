@@ -4,7 +4,11 @@ module Api
       respond_to :json
 
       def index
-        respond_with Channel.all.group_by(&:language_id)
+        if params[:ids].present?
+          respond_with Channel.where(id: params[:ids])
+        else
+          respond_with Channel.all.group_by(&:language_id)
+        end
       end
 
       def show
