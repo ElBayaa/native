@@ -23,4 +23,4 @@ end
 
 users_ids = User.pluck :id
 
-User.all.each{ |u| u.update_attribute(:friends_ids, users_ids.sample(50))}
+User.all.each{ |u| u.update_attribute(:friends_ids, users_ids.sample(50)) }

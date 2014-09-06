@@ -8,4 +8,7 @@ body { padding-top: 60px; }
   float: left;
   margin: 10px;
 }
+
+.nav li{ list-style-type: none; }
+.nav li.active a{ color: #FF00FF; }
 /*=require twitter-bootstrap-static/fontawesome*/

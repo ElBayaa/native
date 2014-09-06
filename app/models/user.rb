@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   
   belongs_to :language
 
-  scope :online, -> { where('last_active_at > ?', Time.now - 15.minutes) }
+  scope :online, -> { where('last_active_at > ?', Time.now - 15.years) }
 
   def friends
     User.where(id: self.friends_ids)

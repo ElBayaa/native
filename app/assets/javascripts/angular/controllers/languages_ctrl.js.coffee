@@ -3,7 +3,7 @@ App.controller 'LanguagesCtrl', ['$scope', '$http', ($scope, $http) ->
   $scope.languages = []
   $scope.selected_language = null
 
-  $scope.setLanguages = () ->
+  $scope.setLanguages = (languages) ->
     $scope.languages = languages
   
   $scope.viewLanguageChannels = (language) ->

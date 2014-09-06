@@ -2,16 +2,16 @@
   %ul.nav.nav-sidebar{'ng-controller' => 'LanguagesCtrl', 'ng-init' => "setLanguages(#{@languages.to_json})"}
     %li{ 'ng-repeat' => "language in languages"}
       %a{'ng-click' => "viewLanguageChannels(language)"} {{language.name}}
-      %ul{ 'ng-controller' => 'UsersCtrl', 'ng-show' => "selected_language && language.id == selected_language.id"}
-        %li{'ng-repeat' => "channel in language.channels"}
+      %ul{ 'ng-controller' => 'ChannelsCtrl', 'ng-show' => "selected_language && language.id == selected_language.id"}
+        %li{'ng-repeat' => "channel in language.channels", 'ng-class' => '{active: selected_channel && selected_channel.id == channel.id}'}
           %a{'ng-click' => 'selectChannel(channel)'} {{channel.name}}
 
-%ul.nav.nav-tabs{'ng-controller' => 'UsersCtrl', 'ng-init' => "setOnlineFriends(#{@online_friends.to_json})"}
-  %li{'ng-repeat' => 'channel in sharedData.active_channels', 'ng-class' => '{active: sharedData.selected_channel && sharedData.selected_channel.id == channel.id}'}
-    %a{'data-toggle' => 'tab'} {{channel.name}}
+%ul.nav.nav-tabs{'ng-controller' => 'ChannelsCtrl', 'ng-init' => "setOnlineFriends(#{@online_friends.to_json})"}
+  %li{'ng-repeat' => 'channel in active_channels', 'ng-class' => '{active: selected_channel && selected_channel.id == channel.id}'}
+    %a{'data-toggle' => 'tab', 'ng-click' => 'selectChannel(channel)'} {{channel.name}}
 
-%ul.thumbnails{ 'ng-controller' => 'UsersCtrl' }
-  %li.span2{ 'ng-repeat' => "user in sharedData.displayed_users"}
+%ul.thumbnails{ 'ng-controller' => 'ChannelsCtrl' }
+  %li.span2{ 'ng-repeat' => "user in selected_channel.users"}
     %a.thumbnail{ href: "javascript:;"}
       %img{src: 'assets/profile.png'}
       %h3 {{user.username}}
