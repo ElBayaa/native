@@ -25,6 +25,7 @@ Rails.application.routes.draw do
           get :online_friends
         end
       end
+      put 'users' => 'users#update_current_user'
     end
   end
   # You can have the root of your site routed with "root"
