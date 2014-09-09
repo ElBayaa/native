@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require private_pub
+//= require sha1
+//= require underscore
 //= require twitter/bootstrap
 //= require angular
 //= require angular-resource
@@ -19,4 +22,3 @@
 //= require main
 //= require_tree ../templates
 //= require_tree ./angular
-

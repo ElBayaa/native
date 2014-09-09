@@ -1,12 +1,12 @@
 - content_for :sidebar do
-  %ul.nav.nav-sidebar{'ng-controller' => 'LanguagesCtrl', 'ng-init' => "setLanguages(#{@languages.to_json})"}
+  %ul.nav.nav-sidebar{ 'ng-controller' => 'LanguagesCtrl', 'ng-init' => "setLanguages(#{@languages.to_json})" }
     %li{ 'ng-repeat' => "language in languages"}
       %a{'ng-click' => "viewLanguageChannels(language)"} {{language.name}}
-      %ul{ 'ng-controller' => 'ChannelsCtrl', 'ng-show' => "selected_language && language.id == selected_language.id"}
+      %ul{ 'ng-controller' => 'ChannelsCtrl', 'ng-show' => "selected_language && language.id == selected_language.id" }
         %li{'ng-repeat' => "channel in language.channels", 'ng-class' => '{active: selected_channel && selected_channel.id == channel.id}'}
           %a{'ng-click' => 'selectChannel(channel)'} {{channel.name}}
 
-%ul.nav.nav-tabs{'ng-controller' => 'ChannelsCtrl', 'ng-init' => "setOnlineFriends(#{@online_friends.to_json}); setActiveChannels(#{@current_channels.to_json})"}
+%ul.nav.nav-tabs{'ng-controller' => 'ChannelsCtrl'}
   %li{'ng-repeat' => 'channel in active_channels', 'ng-class' => '{active: selected_channel && selected_channel.id == channel.id}'}
     %a{'data-toggle' => 'tab', 'ng-click' => 'selectChannel(channel)'}
       {{channel.name}}
@@ -17,4 +17,3 @@
     %a.thumbnail{ href: "javascript:;"}
       %img{src: 'assets/profile.png'}
       %h3 {{user.username}}
-

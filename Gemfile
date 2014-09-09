@@ -10,6 +10,8 @@ gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
+gem 'thin'
+
 gem "html2haml"
 gem "haml-rails"
 gem 'haml_coffee_assets', git: "https://github.com/netzpirat/haml_coffee_assets"
@@ -40,6 +42,7 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'angularjs-rails'
 
+gem 'private_pub'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
